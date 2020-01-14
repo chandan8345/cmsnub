@@ -1,16 +1,24 @@
 <?php
+//cms api
+//Users
+Route::post('/registerUser','cmsnubController@registerUser');
+Route::post('/updateUser','cmsnubController@updateUser');
+Route::get('/loginUser','cmsnubController@loginUser');
+Route::post('/logoutUser','cmsnubController@logoutUser');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//CounsellAction
+Route::post('/createCouncilling','cmsnubController@createCouncilling');
+Route::post('/acceptCouncilling','cmsnubController@acceptCouncilling');
+Route::post('/referedCouncilling','cmsnubController@referedCouncilling');
+Route::post('/settledCouncilling','cmsnubController@settledCouncilling');
+Route::post('/removeCouncilling','cmsnubController@removeCouncilling');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//DisplayCounsell
+Route::get('/getToday','cmsnubController@getToday');
+Route::get('/getWaiting','cmsnubController@getWaiting');
+Route::get('/getPending','cmsnubController@getPending');
+Route::get('/getSettled','cmsnubController@getSettled');
+
+//Others
+Route::get('/getCounciller','cmsnubController@getCounciller');
+Route::get('/getCouncillingType','cmsnubController@getCouncillingType');
